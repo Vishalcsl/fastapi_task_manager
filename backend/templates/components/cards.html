@@ -1,0 +1,10 @@
+<div class="card shadow p-3 mb-2 bg-body rounded" style="width: 18rem;">
+    <div class="card-body">
+        <h5 class="card-title">{{obj1.title}}</h5>
+        <p class="card-text">Location : {{obj1.location}}</p>
+        <p class="card-text">Date Created : {{obj1.date_posted}}</p>
+        <p class="card-text">Due Date: {{obj1.completion_by}}</p>
+        <p class="card-text">Description : {{obj1.description[:60]}}</p>
+        <a href="/{{obj2}}/task/detail/{{obj1.id}}" class="btn btn-primary">Read more</a>
+    </div>
+</div>

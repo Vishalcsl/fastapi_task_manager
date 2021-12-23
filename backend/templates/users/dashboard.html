@@ -1,0 +1,50 @@
+{% extends "shared/base.html" %}
+
+
+{% block title %}
+<title>User Dashboard</title>
+{% endblock %}
+
+{% block content %}
+<div class="container">
+    <div class="row">
+        <div class="col">
+            <h1 class="display-5">Your Task Details..</h1>
+        </div>
+    </div>
+    {% if tasks|length > 0 %}
+    <div class="row">
+        {% for task in tasks %}
+        <div class="col-lg-4 col-md-3 col-sm-10 mr-auto">
+            {% with obj1=task, obj2=username %}
+            {% include "components/cards.html" %}
+            {% endwith %}
+
+            {% if loop.index %3 %}
+        </div>
+        {% else %}
+    </div>
+</div><br>
+<div class="row">
+    {% endif %}
+    {% endfor %}
+</div>
+{% else %}
+<br> <br>
+<div class="row">
+    <div class="col">
+        <h2 class="display-6">Seems you haven't created any task, create one to get started</h2>
+    </div>
+</div>
+{% endif %}
+</div>
+<br><br><br>
+<div class="text-success font-weight-bold d-flex align-items-center justify-content-center">
+    <a href="/{{username}}/create-task" class="btn btn-primary">Create New Task</a>
+</div>
+
+<br><br><br>
+<div class="text-dark font-weight-bold d-flex align-items-center justify-content-center">
+    <a href="/{{username}}/delete-task" class="btn btn-danger">Delete Tasks</a>
+</div>
+{% endblock %}

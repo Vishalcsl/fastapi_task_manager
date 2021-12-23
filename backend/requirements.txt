@@ -1,0 +1,32 @@
+fastapi 
+uvicorn
+
+#for template
+jinja2
+
+#for static files
+aiofiles
+
+#for database
+sqlalchemy 
+psycopg2
+
+#for loading environment variables 
+python-dotenv
+
+#for email validation
+pydantic[email]
+
+#password hashing 
+passlib[bcrypt]
+
+#for Jwt tokens
+python-jose
+
+
+#for accessing form data
+python-multipart
+
+#for testing 
+pytest
+requests
