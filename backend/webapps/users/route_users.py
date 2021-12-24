@@ -1,15 +1,15 @@
-from db.repository.users import create_new_user
-from db.session import get_db
+from backend.db.repository.users import create_new_user
+from backend.db.session import get_db
 from fastapi import APIRouter
 from fastapi import Depends
 from fastapi import Request
 from fastapi import responses
 from fastapi import status
 from fastapi.templating import Jinja2Templates
-from schemas.users import UserCreate
+from backend.schemas.users import UserCreate
 from sqlalchemy.orm import Session
 from sqlalchemy.exc import IntegrityError
-from webapps.users.forms import UserCreateForm
+from backend.webapps.users.forms import UserCreateForm
 
 
 templates = Jinja2Templates(directory="templates")

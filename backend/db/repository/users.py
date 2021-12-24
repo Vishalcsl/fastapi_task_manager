@@ -3,9 +3,9 @@ from sqlalchemy.sql.elements import or_
 from sqlalchemy.exc import IntegrityError
 from sqlalchemy.sql.expression import null
 
-from schemas.users import UserCreate
-from db.models.users import User
-from core.hashing import Hasher
+from backend.schemas.users import UserCreate
+from backend.db.models.users import User
+from backend.core.hashing import Hasher
 
 
 def create_new_user(user:UserCreate, db: Session):

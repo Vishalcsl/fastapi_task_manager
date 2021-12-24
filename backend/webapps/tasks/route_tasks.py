@@ -6,19 +6,19 @@ from fastapi.templating import Jinja2Templates
 from sqlalchemy.orm import Session
 from sqlalchemy.sql import expression
 from sqlalchemy.sql.functions import user
-from apis.version1.route_login import get_current_user_from_token
-from db.repository.tasks import create_new_task
-from schemas.tasks import TaskCreate
-from db.repository.tasks import retreive_task
-from db.repository.tasks import get_user_tasks
-from db.models.users import User
-from webapps.tasks.forms import TaskCreateForm
+from backend.apis.version1.route_login import get_current_user_from_token
+from backend.db.repository.tasks import create_new_task
+from backend.schemas.tasks import TaskCreate
+from backend.db.repository.tasks import retreive_task
+from backend.db.repository.tasks import get_user_tasks
+from backend.db.models.users import User
+from backend.webapps.tasks.forms import TaskCreateForm
 from fastapi.security.utils import get_authorization_scheme_param
-from db.repository.tasks import search_task
+from backend.db.repository.tasks import search_task
 from typing import Optional
 
 
-from db.session import get_db
+from backend.db.session import get_db
 
 templates = Jinja2Templates(directory="templates")
 #coz this route is serving frontend so we do not need to include this in API documentation

@@ -2,16 +2,16 @@ from fastapi.params import Query
 from sqlalchemy.sql.functions import user
 from starlette import status
 from starlette.responses import RedirectResponse
-from apis.version1.route_login import login_for_access_token
-from db.repository.users import get_username_by_email
-from db.session import get_db
+from backend.apis.version1.route_login import login_for_access_token
+from backend.db.repository.users import get_username_by_email
+from backend.db.session import get_db
 from fastapi import APIRouter, responses
 from fastapi import Depends
 from fastapi import HTTPException
 from fastapi import Request
 from fastapi.templating import Jinja2Templates
 from sqlalchemy.orm import Session
-from webapps.auth.forms import LoginForm
+from backend.webapps.auth.forms import LoginForm
 
 templates = Jinja2Templates(directory="templates")
 router = APIRouter(include_in_schema=False)

@@ -1,8 +1,8 @@
 from sqlalchemy.orm import Session, session
-from db.repository.users import get_user_by_username
+from backend.db.repository.users import get_user_by_username
 
-from schemas.tasks import TaskCreate
-from db.models.tasks import Task
+from backend.schemas.tasks import TaskCreate
+from backend.db.models.tasks import Task
 
 def create_new_task(task: TaskCreate, db: Session, owner_id: int):
     task_object = Task(**task.dict(), owner_id=owner_id)

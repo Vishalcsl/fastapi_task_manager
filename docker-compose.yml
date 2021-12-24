@@ -1,0 +1,15 @@
+version: "3"
+services:
+  api:
+    build: .
+    ports:
+      - 8000:8000
+    # env_file:
+    #   - ./.env
+    environment:
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=Vishal
+      - POSTGRES_SERVER=localhost
+      - POSTGRES_PORT=5432
+      - POSTGRES_DB=debug2
+      - SECRET_KEY=daa01f7ba64a2ed2f0aa80aca03eae1e21891b12f39a70e7578e7d6396bf447b

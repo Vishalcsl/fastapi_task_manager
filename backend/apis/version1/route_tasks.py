@@ -1,3 +1,6 @@
+# import os, sys; 
+# sys.path.append(os.path.dirname(os.path.realpath(__file__)))
+
 from os import stat
 from fastapi import APIRouter
 from pydantic.networks import HttpUrl
@@ -6,14 +9,14 @@ from sqlalchemy.orm import Session
 from fastapi import Depends,HTTPException,status
 from typing import List, Optional
 
-from db.session import get_db
-from db.models.tasks import Task
-from db.models.users import User
-from schemas.tasks import TaskCreate,ShowTask
-from db.repository.tasks import create_new_task, retreive_task, get_owner_tasks, update_task_by_id
-from db.repository.tasks import delete_task_by_id
-from apis.version1.route_login import get_current_user_from_token
-from db.repository.tasks import search_task
+from backend.db.session import get_db
+from backend.db.models.tasks import Task
+from backend.db.models.users import User
+from backend.schemas.tasks import TaskCreate,ShowTask
+from backend.db.repository.tasks import create_new_task, retreive_task, get_owner_tasks, update_task_by_id
+from backend.db.repository.tasks import delete_task_by_id
+from backend.apis.version1.route_login import get_current_user_from_token
+from backend.db.repository.tasks import search_task
 
 router = APIRouter()
 

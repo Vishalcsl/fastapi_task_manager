@@ -1,8 +1,11 @@
+# import os, sys; 
+# sys.path.append(os.path.dirname(os.path.realpath(__file__)))
+
 from fastapi import APIRouter
 
-from apis.version1 import route_users
-from apis.version1 import route_tasks
-from apis.version1 import route_login
+from .version1 import route_users
+from .version1 import route_tasks
+from .version1 import route_login
 
 api_router = APIRouter()
 api_router.include_router(route_users.router, prefix="/users", tags=["users"])

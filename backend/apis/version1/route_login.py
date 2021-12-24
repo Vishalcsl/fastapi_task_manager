@@ -1,3 +1,6 @@
+# import os, sys; 
+# sys.path.append(os.path.dirname(os.path.realpath(__file__)))
+
 from os import access
 from fastapi.security import OAuth2PasswordRequestForm,OAuth2PasswordBearer
 from fastapi import Depends,APIRouter
@@ -7,13 +10,13 @@ from datetime import timedelta
 from fastapi import status,HTTPException
 from fastapi import Depends
 from jose import JWTError, jwt
-from db.session import get_db
-from core.hashing import Hasher
-from schemas.tokens import Token
-from db.repository.login import get_user
-from core.security import create_access_token
-from core.config import settings
-from apis.utils import OAuth2PasswordBearerWithCookie
+from backend.db.session import get_db
+from backend.core.hashing import Hasher
+from backend.schemas.tokens import Token
+from backend.db.repository.login import get_user
+from backend.core.security import create_access_token
+from backend.core.config import settings
+from backend.apis.utils import OAuth2PasswordBearerWithCookie
 
 
 router = APIRouter()
