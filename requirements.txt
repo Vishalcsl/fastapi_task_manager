@@ -11,6 +11,9 @@ aiofiles
 sqlalchemy 
 psycopg2
 
+#for database migration since sql alchemy has limitations as it doesn't create a table once again if any changes are made to it 
+alembic
+
 #for loading environment variables 
 python-dotenv
 
