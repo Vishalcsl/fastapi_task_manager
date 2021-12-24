@@ -20,7 +20,8 @@ def configure_static(app):
     app.mount("/backend/static", StaticFiles(directory="backend/static"), name="static")
 
 def create_tables():
-    Base.metadata.create_all(bind=engine)
+    if not engine.dialect.has_table(engine, "TASK" ) and not engine.dialect.has_table(engine, "USER" ): 
+        Base.metadata.create_all(bind=engine)
 
 def start_application():
     app = FastAPI(title=settings.PROJECT_NAME, version=settings.PROJECT_VERSION)
