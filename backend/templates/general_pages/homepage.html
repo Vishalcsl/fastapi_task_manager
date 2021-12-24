@@ -1,0 +1,32 @@
+{% extends "shared/base.html" %}
+
+{% block title %}
+<title>Task Manager</title>
+{% endblock %}
+
+{% block content %}
+<div class="container">
+    <div class="split left">
+        <div class="centered">
+            <img src="{{ url_for('static', path='images/logo.png') }}" alt="Main Logo">
+            <h2>Task Mantry</h2>
+            <p>Tracking all your task made easy.</p>
+        </div>
+    </div>
+
+    <div class="split right">
+        <div class="centered">
+            <img src="{{ url_for('static', path='images/avatar.png') }}" alt="Avatar man">
+            <h2>Get Started</h2>
+            <br><br><br>
+            <div class="text-success font-weight-bold d-flex align-items-center justify-content-center">
+                <a href="/login/" class="btn btn-primary">LOGIN</a>
+            </div>
+            <br><br><br>
+            <div class="text-success font-weight-bold d-flex align-items-center justify-content-center">
+                <a href="/register/" class="btn btn-primary">REGISTER</a>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
