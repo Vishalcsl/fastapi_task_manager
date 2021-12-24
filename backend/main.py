@@ -30,7 +30,7 @@ def configure_static(app):
 
 def create_tables():
     
-    if not table_exists(engine=engine, name="task") and not table_exists(engine=engine, name="task"): 
+    if not table_exists(engine=engine, name="task") and not table_exists(engine=engine, name="user"): 
         Base.metadata.create_all(bind=engine)
 
 def start_application():
