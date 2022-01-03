@@ -15,7 +15,7 @@ from sqlalchemy.orm import Session
 from backend.webapps.auth.forms import LoginForm
 
 # templates = Jinja2Templates(directory="templates")
-templates = Jinja2Templates(directory=os.path.abspath(os.path.expanduser('templates')))
+templates = Jinja2Templates(directory=os.path.abspath(os.path.expanduser('~/backend/templates')))
 router = APIRouter(include_in_schema=False)
 
 
