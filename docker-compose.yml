@@ -2,14 +2,33 @@ version: "3"
 services:
   api:
     build: .
+    depends_on:
+      - postgres
     ports:
       - 8000:8000
+    volumes:
+        - ./:/usr/src/app:ro
+    command: uvicorn backend.main:app --host 0.0.0.0 --port 8000 --reload
     # env_file:
     #   - ./.env
     environment:
       - POSTGRES_USER=postgres
       - POSTGRES_PASSWORD=Vishal
-      - POSTGRES_SERVER=localhost
+      - POSTGRES_SERVER=postgres
       - POSTGRES_PORT=5432
-      - POSTGRES_DB=debug2
+      - POSTGRES_DB=fastapi
       - SECRET_KEY=daa01f7ba64a2ed2f0aa80aca03eae1e21891b12f39a70e7578e7d6396bf447b
+      - ALGORITHM=HS256
+      - ACCESS_TOKEN_EXPIRE_MINUTES=30
+
+  postgres:
+    image: postgres
+    environment:
+        - POSTGRES_PASSWORD=Vishal
+        - POSTGRES_DB=fastapi
+
+    volumes:
+        - postgres-db:/var/lib/postgresql/data
+
+volumes:
+    postgres-db:

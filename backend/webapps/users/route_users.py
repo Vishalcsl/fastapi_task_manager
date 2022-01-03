@@ -1,3 +1,4 @@
+import os
 from backend.db.repository.users import create_new_user
 from backend.db.session import get_db
 from fastapi import APIRouter
@@ -12,7 +13,8 @@ from sqlalchemy.exc import IntegrityError
 from backend.webapps.users.forms import UserCreateForm
 
 
-templates = Jinja2Templates(directory="templates")
+# templates = Jinja2Templates(directory="templates")
+templates = Jinja2Templates(directory=os.path.abspath(os.path.expanduser('templates')))
 router = APIRouter(include_in_schema=False)
 
 @router.get("/register/")

@@ -1,3 +1,4 @@
+import os
 from fastapi.params import Query
 from sqlalchemy.sql.functions import user
 from starlette import status
@@ -13,7 +14,8 @@ from fastapi.templating import Jinja2Templates
 from sqlalchemy.orm import Session
 from backend.webapps.auth.forms import LoginForm
 
-templates = Jinja2Templates(directory="templates")
+# templates = Jinja2Templates(directory="templates")
+templates = Jinja2Templates(directory=os.path.abspath(os.path.expanduser('templates')))
 router = APIRouter(include_in_schema=False)
 
 
