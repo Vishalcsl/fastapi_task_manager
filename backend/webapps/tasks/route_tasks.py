@@ -23,7 +23,7 @@ from backend.db.session import get_db
 
 # templates = Jinja2Templates(directory="templates")
 print("******************************************")
-print(os.path.abspath())
+print(os.path.abspath(os.path.expanduser('templates')))
 print("******************************************")
 templates = Jinja2Templates(directory=os.path.abspath(os.path.expanduser('templates')))
 #coz this route is serving frontend so we do not need to include this in API documentation
