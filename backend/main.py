@@ -1,6 +1,6 @@
 # import os, sys; 
 # sys.path.append(os.path.dirname(os.path.realpath(__file__)))
-
+import os
 from fastapi import FastAPI
 from fastapi.staticfiles import StaticFiles
 from sqlalchemy import schema
@@ -34,6 +34,7 @@ def create_tables():
         Base.metadata.create_all(bind=engine)
 
 def start_application():
+    print(os.path.abspath(__file__))
     app = FastAPI(title=settings.PROJECT_NAME, version=settings.PROJECT_VERSION)
     include_router(app)
     configure_static(app)

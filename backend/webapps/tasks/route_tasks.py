@@ -23,14 +23,17 @@ from backend.db.session import get_db
 
 # templates = Jinja2Templates(directory="templates")
 print("******************************************")
-print(os.path.abspath(os.path.expanduser('~/backend/templates')))
+print(os.path.abspath(__file__))
 print("******************************************")
-templates = Jinja2Templates(directory=os.path.abspath(os.path.expanduser('~/backend/templates')))
+templates = Jinja2Templates(directory=os.path.abspath(os.path.expanduser('/usr/src/app/backend/templates')))
 #coz this route is serving frontend so we do not need to include this in API documentation
 router = APIRouter(include_in_schema=False)
 
 @router.get("/")
 async def home(request: Request):
+    # print("******************************************")
+    # print(os.path.abspath(os.path.expanduser('~/backend/templates')))
+    # print("******************************************")
     return templates.TemplateResponse(
         "/general_pages/homepage.html", {"request": request}
     )
